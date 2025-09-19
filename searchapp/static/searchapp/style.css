@@ -1,0 +1,152 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+.search_section {
+    height: 100vh;
+    color: white;
+    width: 100%;
+    background-color: black
+}
+
+
+.search{
+    width: max-content;
+    align-items: center;
+    display: flex;
+    padding: 14px;
+    border-radius: 28px;
+    border: 4px solid;
+    border-color: rgb(54, 54, 54);
+    transition : border-color 0.3s ease; 
+}
+
+
+.search:hover{
+    border-color: rgb(3, 242, 55);
+}
+
+
+.search-input{
+    border: none;
+    width: 300  px;
+    outline: none;
+    color: white;
+    background: transparent ;
+    font-size:18px;
+    font-family:'Lexend', sans-serif;
+    margin-left: 14px;
+}
+
+.ranking_section {
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(104, 169, 211, 0.75); 
+}
+
+.ranking_center_area {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+
+.search_center_area {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.search_box {
+    text-align: center;
+}
+
+.add_document {
+    transition: color 0.3s ease;
+}
+
+.add_document:hover {
+    color: rgb(3, 242, 55);
+    cursor: pointer;
+}
+
+.tooltip {
+    position: fixed;
+    /* fixed to viewport -> easier placement */
+    display: none;
+    background: rgba(0, 0, 0, 0.85);
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 14px;
+    pointer-events: none;
+    /* don't block canvas interactions */
+    white-space: nowrap;
+    z-index: 9999;
+    /* very high so it's above the canvas */
+    transform: translateZ(0);
+    /* sometimes helps with GPU stacking */
+}
+
+#renderCanvas {
+    width: 100%;
+    height: 100%;
+    touch-action: none;
+    display: block;
+    position: relative;
+    /* make it positioned, explicit stacking */
+    z-index: 0;
+}
+
+.ranking_table {
+    border-collapse: collapse;
+    width: 70%;
+    /* make table bigger */
+    font-size: 18px;
+    /* larger font */
+    margin-top: 20px;
+    border: 2px solid rgb(3, 242, 55);
+    /* green border */
+}
+
+.ranking_table th,
+.ranking_table td {
+    border: 1px solid rgb(3, 242, 55);
+    padding: 14px 20px;
+    /* bigger cells */
+    text-align: center;
+    color: white;
+}
+
+.ranking_table th {
+    background-color: rgba(0, 0, 0, 0.8);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.ranking_table tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.ranking_table tr:nth-child(odd) {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.ranking_table tr:hover {
+    background-color: rgba(3, 242, 55, 0.2);
+    /* light green hover */
+    transition: background-color 0.2s ease;
+}

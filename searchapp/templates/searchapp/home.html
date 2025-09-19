@@ -1,0 +1,79 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Engine</title>
+    <link rel="stylesheet" href="{% static 'searchapp/style.css' %}">
+    
+    <!-- BabylonJS -->
+    <script src="https://cdn.babylonjs.com/babylon.js"></script>
+    <script src="https://cdn.babylonjs.com/gui/babylon.gui.min.js"></script>
+    
+    <!-- Google Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=search" />
+</head>
+<body>
+    <!-- Search Section -->
+    <section class="search_section">
+        <div class="search_center_area">
+            <div class="search_box">
+                <h1>Night Runners</h1>
+                <form action="{% url 'search' %}" method="get">
+                    <div class="search">
+                        <span class="search-icon material-symbols-outlined">search</span>
+                        <input class="search-input" type="search" name="query" value="{{ query|default:'' }}" placeholder="Search..." required>
+                    </div>
+                </form>
+            </div>
+            <div class="add_document">
+                <h3>Add a new document to the corpus + </h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Result Section (Globe) -->
+    <section class="result_section">
+        <div id="tooltip" class="tooltip"></div>
+        <canvas id="renderCanvas"></canvas>
+    </section>
+
+    <!-- Ranking Section -->
+    <section class="ranking_section">
+        <div class="ranking_center_area">
+            <h2>Top Ranked Documents</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Doc ID</th>
+                        <th>Score</th>
+                    </tr>
+                </thead>
+                <tbody id="ranking_list">
+                    {% if results %}
+                        {% for docID, score in results %}
+                            <tr>
+                                <td>{{ docID }}</td>
+                                <td>{{ score|floatformat:4 }}</td>
+                            </tr>
+                        {% empty %}
+                            <tr><td colspan="2">No results found.</td></tr>
+                        {% endfor %}
+                    {% else %}
+                        <tr><td colspan="2">Search to see results here.</td></tr>
+                    {% endif %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script>
+      const docPointsUrl = "{% static 'searchapp/json_files/doc_points.json' %}";
+      const queryPointUrl = "{% static 'searchapp/json_files/query_point.json' %}";
+    </script>
+    <script src="{% static 'searchapp/script.js' %}"></script>
+</body>
+</html>
