@@ -44,22 +44,6 @@ body {
     margin-left: 14px;
 }
 
-.ranking_section {
-    height: 100vh;
-    width: 100%;
-    background-color: rgba(104, 169, 211, 0.75); 
-}
-
-.ranking_center_area {
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: white;
-}
-
 
 .search_center_area {
     height: 100vh;
@@ -101,6 +85,77 @@ body {
     /* sometimes helps with GPU stacking */
 }
 
+
+/* Section styling */
+/* Ranking Section */
+.ranking_section {
+    width: 100%;
+    min-height: 100vh;
+    /* ensures it fills screen */
+    background-color: #000;
+    /* black background */
+    color: #fff;
+    padding: 40px 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    /* start near top, not vertically centered */
+}
+
+/* Center area */
+.ranking_center_area {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    color: white;
+}
+
+/* Heading */
+.ranking_center_area h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: rgb(3, 242, 55);
+    /* optional green accent */
+}
+
+/* Table styling */
+.ranking_section table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #111;
+    /* subtle contrast from pure black */
+}
+
+/* Table borders */
+.ranking_section th,
+.ranking_section td {
+    border: 1px solid #fff;
+    /* white border */
+    padding: 12px;
+    text-align: center;
+    transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+/* Table header */
+.ranking_section th {
+    background-color: #222;
+    color:rgb(3, 242, 55);
+    /* green header text */
+    font-weight: bold;
+}
+
+/* Hover effect */
+.ranking_section tr:hover td {
+    border-color: rgb(3, 242, 55);
+    /* border turns green */
+    color: rgb(3, 242, 55);
+    /* text turns green */
+    cursor: pointer;
+}
+
+
 #renderCanvas {
     width: 100%;
     height: 100%;
@@ -109,44 +164,4 @@ body {
     position: relative;
     /* make it positioned, explicit stacking */
     z-index: 0;
-}
-
-.ranking_table {
-    border-collapse: collapse;
-    width: 70%;
-    /* make table bigger */
-    font-size: 18px;
-    /* larger font */
-    margin-top: 20px;
-    border: 2px solid rgb(3, 242, 55);
-    /* green border */
-}
-
-.ranking_table th,
-.ranking_table td {
-    border: 1px solid rgb(3, 242, 55);
-    padding: 14px 20px;
-    /* bigger cells */
-    text-align: center;
-    color: white;
-}
-
-.ranking_table th {
-    background-color: rgba(0, 0, 0, 0.8);
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.ranking_table tr:nth-child(even) {
-    background-color: rgba(0, 0, 0, 0.4);
-}
-
-.ranking_table tr:nth-child(odd) {
-    background-color: rgba(0, 0, 0, 0.6);
-}
-
-.ranking_table tr:hover {
-    background-color: rgba(3, 242, 55, 0.2);
-    /* light green hover */
-    transition: background-color 0.2s ease;
 }

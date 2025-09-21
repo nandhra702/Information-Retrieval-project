@@ -101,7 +101,7 @@ def main(string):
         "x": float(query_vec_3d[0]),
         "y": float(query_vec_3d[1]),
         "z": float(query_vec_3d[2]),
-        "doc": "QUERY",
+        "doc": "New_query",
     }
 
     # ✅ build query_point.json path dynamically
@@ -110,6 +110,8 @@ def main(string):
     )
     with open(query_point_path, "w", encoding="utf-8") as f:
         json.dump(query_json, f, indent=2)
+
+    
 
 
 if __name__ == "__main__":
