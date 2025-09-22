@@ -54,7 +54,7 @@ def build_postings():
                 if docid not in already_indexed_docs}
 
     if not new_docs:
-        print("ℹ️ No new documents to index.")
+        print(" !! No new documents to index.")
         return
 
     for docid, tokens in new_docs.items():
@@ -75,4 +75,4 @@ def build_postings():
     with open(postings_json_path, "w", encoding="utf-8") as f:
         json.dump(postings, f, indent=2)
 
-    print(f"✅ Postings updated successfully! Indexed {len(new_docs)} new docs.")
+    print(f"Postings updated successfully! Indexed {len(new_docs)} new docs.")
