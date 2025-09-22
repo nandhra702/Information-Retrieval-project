@@ -1,5 +1,6 @@
 import os
 import math
+import fuzzy
 import json
 import pickle
 from collections import Counter
@@ -41,8 +42,9 @@ def process_query_and_rank(query_string, top_k=5):
     df_dict = {term: len(postings[term]) for term in postings}
 
     # ----------------------------
-    # 2. Tokenize query
+    # 2. Tokenize query and run soundex on it
     # ----------------------------
+    
     query_tokens = tokenizing.simple_tokenize(query_string)
     tf_raw = Counter(query_tokens)
 
@@ -89,6 +91,7 @@ def main(string):
     print("\n🔎 Query Vector (normalized ltc):")
     for term, weight in query_vec.items():
         print(f"{term}: {weight:.4f}")
+
 
     print("\n📄 Top matching documents:")
     for docID, score in top_docs:

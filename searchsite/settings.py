@@ -9,6 +9,11 @@ https://docs.djangoproject.com/en/5.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
+import os
+
+# If you want to point to an external folder (e.g. Windows drive), override here:
+CORPUS_DIR = r"C:\Users\Sukhraj\Downloads\Corpus\Corpus"
+
 
 from pathlib import Path
 

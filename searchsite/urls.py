@@ -18,10 +18,13 @@ from django.contrib import admin
 from django.urls import path
 from searchapp import views
 
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", views.home, name="home"),
     path("search", views.search_view, name="search"),
+    path('open/<str:filename>', views.open_document, name='open_document')
 
     # path("search/", views.search, name="search"),
 ]
