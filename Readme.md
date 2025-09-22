@@ -1,10 +1,11 @@
 # 🌌 NightRunners Search Engine  
 
--> A new way to visualize search
+# A new way to visualize search
 
+( Try clicking this button. It takes you to the deepwiki page, where Devin AI helps you to understand the repo ) 
 [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/nandhra702/NightRunners__Search_Engine)  
 
-NightRunners is a **full-text search engine** built from scratch with a Django backend, advanced IR (Information Retrieval) techniques, and an ** interesting 3D visualization layer** for exploring search results like never before.  
+NightRunners is a **full-text search engine** built from scratch with a Django backend, advanced IR (Information Retrieval) techniques, and an **interesting 3D visualization layer** for exploring search results like never before.  
 
 Designed for both research and fun — blending traditional IR concepts with modern interactive features.  
 
@@ -26,9 +27,10 @@ Designed for both research and fun — blending traditional IR concepts with mod
   - **Queries**: log tf, idf, cosine normalization  
 
 Formula used:  
-\[
-tfidf = (1 + \log_{10}(tf)) \times \log_{10}(N/df)
-\]
+tf = 1 + log10(freq)
+idf = log10(N / df)
+tf-idf = tf * idf
+
 
 ###  Ranking & Results  
 - Cosine similarity used for ranking documents against queries  
@@ -36,7 +38,10 @@ tfidf = (1 + \log_{10}(tf)) \times \log_{10}(N/df)
 - Results rendered with proper ranking and scoring  
 
 ###  Output  
-- Full demo video included (see below )  
+- Full demo video included (see below )
+  ## 🎥 Demo
+![Demo GIF](https://github.com/nandhra702/NightRunners__Search_Engine/blob/main/DEMO.gif)
+
 
 ---
 
@@ -44,10 +49,10 @@ tfidf = (1 + \log_{10}(tf)) \times \log_{10}(N/df)
 
 Unlike a typical search engine clone, NightRunners adds some **next-level features**:  
 
-- 🌀 **Intriguing 3D visualization** of search results  
-- 📂 **Direct file opening** from search results  
-- ➕ **Support for adding documents** dynamically to the corpus  
-- 🌐 **Django backend hosted** for scalability and easy integration  
+-  **Intriguing 3D visualization** of search results  
+-  **Direct file opening** from search results  
+-  **Support for adding documents** dynamically to the corpus  
+-  **Django backend hosted** for scalability and easy integration  
 
 ---
 
