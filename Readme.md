@@ -40,7 +40,7 @@ tf-idf = tf * idf
 ###  Output  
 - Full demo video included (see below )
   ## 🎥 Demo
-![Demo GIF](https://github.com/nandhra702/NightRunners__Search_Engine/blob/main/DEMO.gif)
+![Demo GIF](https://github.com/nandhra702/NightRunners__Search_Engine/blob/main/demo_f.gif)
 
 
 ---
@@ -79,3 +79,15 @@ Unlike a typical search engine clone, NightRunners adds some **next-level featur
 3. **Ranking & Output**:  
    - Results ranked by similarity score  
    - 3D visualization displays documents
+
+## Getting started
+-> Clone the repo
+-> python -m venv venv
+-> pip install numpy pandas nltk
+-> nltk.download('punkt')
+-> nltk.download('stopwords')
+-> nltk.download("wordnet")
+-> pip install Django
+-> django-admin startproject searchsite
+-> cd searchsite
+-> python manage.py startapp searchapp
