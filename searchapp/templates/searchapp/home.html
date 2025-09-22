@@ -28,9 +28,6 @@
                     </div>
                 </form>
             </div>
-            <div class="add_document">
-                <h3>Add a new document to the corpus + </h3>
-            </div>
         </div>
     </section>
 
@@ -43,7 +40,8 @@
     <!-- Ranking Section -->
     <section class="ranking_section">
         <div class="ranking_center_area">
-            <h2>Top Ranked Documents</h2>
+            <h2><u>Top Ranked Documents</u></h2>
+            <h2>Click to open them</h2>
             <table>
                 <thead>
                     <tr>
@@ -54,10 +52,11 @@
                 <tbody id="ranking_list">
                     {% if results %}
                         {% for docID, score in results %}
-                            <tr>
-                                <td>{{ docID }}</td>
-                                <td>{{ score|floatformat:4 }}</td>
+                            <tr onclick="window.location='{% url 'open_document' docID %}'" style="cursor:pointer;">
+                            <td>{{ docID }}</td>
+                            <td>{{ score|floatformat:4 }}</td>
                             </tr>
+
                         {% empty %}
                             <tr><td colspan="2">No results found.</td></tr>
                         {% endfor %}
@@ -65,6 +64,8 @@
                         <tr><td colspan="2">Search to see results here.</td></tr>
                     {% endif %}
                 </tbody>
+
+
             </table>
         </div>
     </section>
