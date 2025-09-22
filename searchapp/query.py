@@ -4,7 +4,7 @@ import fuzzy
 import json
 import pickle
 from collections import Counter
-from django.conf import settings  # ✅ needed for BASE_DIR
+from django.conf import settings  # needed for BASE_DIR
 from . import Dimensionality_reduction
 from . import tokenizing  # must expose simple_tokenize()
 
@@ -35,14 +35,14 @@ def process_query_and_rank(query_string, top_k=5):
     with open(postings_path, "rb") as f:
         postings = pickle.load(f)
 
-    with open(docvec_path, "r") as f:  # ✅ json needs text mode
+    with open(docvec_path, "r") as f:  
         doc_vectors = json.load(f)
 
     N = len(documents)  # total docs
     df_dict = {term: len(postings[term]) for term in postings}
 
     # ----------------------------
-    # 2. Tokenize query and run soundex on it
+    # 2. Tokenize query
     # ----------------------------
     
     query_tokens = tokenizing.simple_tokenize(query_string)
@@ -88,12 +88,12 @@ def main(string):
     query = string
     query_vec, top_docs = process_query_and_rank(query, top_k=5)
 
-    print("\n🔎 Query Vector (normalized ltc):")
+    print("\n Query Vector (normalized ltc):")
     for term, weight in query_vec.items():
         print(f"{term}: {weight:.4f}")
 
 
-    print("\n📄 Top matching documents:")
+    print("\n Top matching documents:")
     for docID, score in top_docs:
         print(f"Doc {docID}: {score:.4f}")
 
@@ -107,7 +107,7 @@ def main(string):
         "doc": "New_query",
     }
 
-    # ✅ build query_point.json path dynamically
+    # build query_point.json path dynamically
     query_point_path = os.path.join(
         settings.BASE_DIR, "searchapp", "static", "searchapp", "json_files", "query_point.json"
     )
