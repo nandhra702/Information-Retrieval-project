@@ -1,5 +1,6 @@
-**NIGHT RUNNERS** — New way to visualize search 
-[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/nandhra702/NightRunners__Search_Engine)
+->**NIGHT RUNNERS** — New way to visualize search 
+[![Ask DeepWiki](https://img.shields.io/badge/Ask%20DeepWiki-blue?style=for-the-badge)](https://deepwiki.com/nandhra702/NightRunners__Search_Engine)
+
 
 
 ->python -m venv venv
@@ -27,6 +28,7 @@ pip install Django
 django-admin startproject searchsite
 cd searchsite
 python manage.py startapp searchapp
+
 
 
 
