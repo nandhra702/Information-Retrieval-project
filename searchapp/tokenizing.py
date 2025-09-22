@@ -56,7 +56,7 @@ def process_file(file_path):
     with open(tokens_path, "wb") as f:
         pickle.dump(data, f)
 
-    print("✅ Tokens saved successfully!")
+    print("Tokens saved successfully!")
     return tokens
 
 
