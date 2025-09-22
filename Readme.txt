@@ -1,3 +1,5 @@
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/nandhra702/NightRunners__Search_Engine)
+
 ->python -m venv venv
 ->pip install numpy pandas nltk
 
@@ -23,3 +25,5 @@ pip install Django
 django-admin startproject searchsite
 cd searchsite
 python manage.py startapp searchapp
+
+
