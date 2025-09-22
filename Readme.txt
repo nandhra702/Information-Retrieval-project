@@ -1,4 +1,6 @@
-<a href="https://deepwiki.com/nandhra702/NightRunners__Search_Engine"><img src="https://deepwiki.com/badge.svg" alt="Ask DeepWiki"></a>
+**NIGHT RUNNERS** — New way to visualize search 
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/nandhra702/NightRunners__Search_Engine)
+
 
 ->python -m venv venv
 ->pip install numpy pandas nltk
@@ -25,6 +27,7 @@ pip install Django
 django-admin startproject searchsite
 cd searchsite
 python manage.py startapp searchapp
+
 
 
 
