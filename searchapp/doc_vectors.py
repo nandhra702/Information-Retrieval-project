@@ -54,7 +54,7 @@ def build_doc_vectors():
             doc_termfreqs[docid][term] = tf
 
     if not doc_termfreqs:
-        print("ℹ️ No new documents to normalize.")
+        print("No new documents to normalize.")
         return
 
     # ----------------------------
@@ -72,4 +72,4 @@ def build_doc_vectors():
     with open(docvec_path, "w", encoding="utf-8") as f:
         json.dump(doc_vectors, f, indent=2)
 
-    print(f"✅ Document vectors updated! Normalized {len(doc_termfreqs)} new docs.")
+    print(f" Document vectors updated! Normalized {len(doc_termfreqs)} new docs.")
